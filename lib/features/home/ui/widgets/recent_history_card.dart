@@ -4,6 +4,7 @@ import 'package:measureapp/core/helpers/date_helper.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/colors.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
+import 'package:measureapp/features/home/ui/widgets/card_header.dart';
 
 class RecentHistoryCard extends StatelessWidget {
   const RecentHistoryCard({
@@ -23,40 +24,13 @@ class RecentHistoryCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: ColorsManager.historyCardBlue,
-                      borderRadius: BorderRadius.circular(30.r),
-                    ),
-                    padding: const EdgeInsets.all(8).r,
-                    child: Text.rich(
-                      overflow: TextOverflow.ellipsis,
-                      TextSpan(
-                        children: [
-                          TextSpan(
-                            text: 'Z00.00 • ',
-                            style: TextStyles.blueTextExtraBold14,
-                          ),
-                          TextSpan(
-                            text: 'Physical Examination',
-                            style: TextStyles.blueTextMedium14,
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                horizontalSpace(24),
-                Icon(
-                  Icons.arrow_circle_right_outlined,
-                  color: ColorsManager.blueText,
-                  size: 20.w,
-                ),
-              ],
+            CardHeader(
+              backgroundColor: ColorsManager.historyCardBlue,
+              cognitiveStatusText: 'Z00.00',
+              cognitiveStatusTextStyle: TextStyles.blueTextExtraBold14,
+              applicableMeasuresText: 'Physical Examination',
+              applicableMeasuresTextStyle: TextStyles.blueTextMedium14,
+              iconColor: ColorsManager.blueText,
             ),
             verticalSpace(28),
             Text(

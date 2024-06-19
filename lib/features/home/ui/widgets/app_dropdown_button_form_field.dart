@@ -35,9 +35,10 @@ class AppDropdownButtonFormField extends StatelessWidget {
         style: TextStyles.primaryTextMedium16,
         icon: Transform.rotate(
           angle: 90 * 3.14159 / 180,
-          child: const Icon(
+          child: Icon(
             Icons.arrow_forward_ios,
             color: ColorsManager.secondaryText,
+            size: 20.r,
           ),
         ),
         decoration: InputDecoration(

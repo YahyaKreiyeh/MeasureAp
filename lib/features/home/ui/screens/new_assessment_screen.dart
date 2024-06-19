@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:measureapp/core/helpers/extensions.dart';
 import 'package:measureapp/core/helpers/loading.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
+import 'package:measureapp/core/routing/routes.dart';
+import 'package:measureapp/core/widgets/buttons/app_elevated_button.dart';
 import 'package:measureapp/features/home/ui/widgets/app_dropdown_button_form_field.dart';
-import 'package:measureapp/features/home/ui/widgets/app_floating_action_button.dart';
 
 class NewAssessmentScreen extends StatelessWidget {
   const NewAssessmentScreen({super.key});
@@ -18,7 +20,7 @@ class NewAssessmentScreen extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            padding: const EdgeInsets.symmetric(horizontal: 20).w,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -90,12 +92,19 @@ class NewAssessmentScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: AppFloatingActionButton(
-        text: 'Start assessment',
-        onPressed: () async {
-          loading(context);
-          Future.delayed(const Duration(seconds: 5));
-        },
+      floatingActionButton: SizedBox(
+        width: 0.9.sw,
+        child: AppElevatedButton(
+          text: 'Start assessment',
+          onPressed: () async {
+            loading(context);
+            await Future.delayed(const Duration(seconds: 5));
+            if (context.mounted) {
+              context.pop();
+              context.pushNamed(Routes.assessmentScreen);
+            }
+          },
+        ),
       ),
     );
   }

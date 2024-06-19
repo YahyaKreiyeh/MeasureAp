@@ -4,7 +4,7 @@ class ColorsManager {
   ColorsManager._();
 
   // App basics
-  static const Color primary = Color(0xFF2ED880);
+  static const Color primary = Color(0x1E4D6FE7);
   static const Color secondary = Color(0xFFE6FFF2);
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
@@ -18,6 +18,8 @@ class ColorsManager {
   static const Color appointmentForegroundBlue = Color(0xFF7698FE);
   static const Color historyCardBlue = Color(0x1E4D6FE7);
   static const Color assessmentCardOrange = Color(0x1EE7974D);
+  static const Color successGreen = Color(0xFF0C9A55);
+  static const Color failRed = Color(0xFF9A0C0C);
 
   // Gradient
 
@@ -29,6 +31,8 @@ class ColorsManager {
   static const Color secondaryText = Color(0xFF6C7278);
   static const Color blueText = Color(0xFF003F70);
   static const Color orangeText = Color(0xFFFD7702);
+  static const Color orangeText2 = Color(0xFFFF8E00);
+  static const Color teal = Color(0xFF44D1BB);
 
   // Backgroud
   static const Color splashBackground = Color(0xFF282425);
@@ -42,9 +46,12 @@ class ColorsManager {
   // Border
   static const Color fieldBorder = Color(0xFFDCE4E8);
   static const Color divider = Color(0xFFB2B2B2);
+  static const Color orangeBorder = Color(0xFFFF5003);
 
   // Toggles
   static const Color toggleOff = Color(0xFFD9D9D9);
+  static const Color checkMarkOrange = Color(0xFFEA7E41);
+  static const Color toggleGrey = Color(0xFFBAC1CC);
 
   // Error and validation
 

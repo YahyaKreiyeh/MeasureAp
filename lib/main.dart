@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:measureapp/core/routing/app_router.dart';
 import 'package:measureapp/core/routing/routes.dart';
-import 'package:measureapp/mesaure_app.dart';
+import 'package:measureapp/measure_app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

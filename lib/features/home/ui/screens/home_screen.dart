@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/helpers/extensions.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/routing/routes.dart';
-import 'package:measureapp/features/home/ui/widgets/app_floating_action_button.dart';
+import 'package:measureapp/core/widgets/buttons/app_elevated_button.dart';
 import 'package:measureapp/features/home/ui/widgets/home_header.dart';
 import 'package:measureapp/features/home/ui/widgets/recent_assessments_card.dart';
 import 'package:measureapp/features/home/ui/widgets/recent_history_card.dart';
@@ -29,19 +29,27 @@ class HomeScreen extends StatelessWidget {
                   const SectionTitle(),
                   verticalSpace(6),
                   const RecentHistoryCard(),
+                  const RecentHistoryCard(),
+                  const RecentHistoryCard(),
                   verticalSpace(38),
                   const SectionTitle(),
                   verticalSpace(6),
                   const RecentAssessmentsCard(),
+                  const RecentAssessmentsCard(),
+                  const RecentAssessmentsCard(),
+                  verticalSpace(100),
                 ],
               ),
             ),
           ),
         ),
       ),
-      floatingActionButton: AppFloatingActionButton(
-        text: '+ New assessment',
-        onPressed: () => context.pushNamed(Routes.assessmentScreen),
+      floatingActionButton: SizedBox(
+        width: 0.9.sw,
+        child: AppElevatedButton(
+          text: '+ New assessment',
+          onPressed: () => context.pushNamed(Routes.newAssessmentScreen),
+        ),
       ),
     );
   }
