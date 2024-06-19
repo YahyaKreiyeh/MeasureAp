@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/routing/app_router.dart';
 import 'package:measureapp/core/routing/routes.dart';
+import 'package:measureapp/core/utils/constants/colors.dart';
 
 class MeasureApp extends StatelessWidget {
   final AppRouter appRouter;
@@ -25,25 +26,25 @@ class MeasureApp extends StatelessWidget {
     // );
 
     return ScreenUtilInit(
-      designSize: const Size(430, 932),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
         title: 'Measure Ap',
         theme: ThemeData(
-            // appBarTheme: const AppBarTheme(
-            //   color: ColorsManager.scaffoldBackground,
-            //   centerTitle: true,
-            // ),
-            // primaryColor: ColorsManager.primary,
-            // scaffoldBackgroundColor: ColorsManager.scaffoldBackground,
-            // colorScheme: ColorScheme.fromSeed(
-            //   brightness: Brightness.light,
-            //   seedColor: ColorsManager.primary,
-            //   surface: ColorsManager.white,
-            //   surfaceTint: ColorsManager.white,
-            // ),
-            ),
+          appBarTheme: const AppBarTheme(
+            color: ColorsManager.scaffoldBackground,
+            centerTitle: true,
+          ),
+          // primaryColor: ColorsManager.primary,
+          scaffoldBackgroundColor: ColorsManager.scaffoldBackground,
+          // colorScheme: ColorScheme.fromSeed(
+          //   brightness: Brightness.light,
+          //   seedColor: ColorsManager.primary,
+          //   surface: ColorsManager.white,
+          //   surfaceTint: ColorsManager.white,
+          // ),
+        ),
         // darkTheme: ThemeData.dark().copyWith(
         //   colorScheme: kDarkColorScheme,
         //   cardTheme: const CardTheme().copyWith(
