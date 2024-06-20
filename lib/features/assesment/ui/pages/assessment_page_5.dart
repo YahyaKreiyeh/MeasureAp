@@ -36,8 +36,8 @@ class AssessmentPage5 extends StatelessWidget {
                 children: [
                   verticalSpace(16),
                   SizedBox(
-                    height: 150,
-                    width: 150,
+                    height: 135.w,
+                    width: 135.w,
                     child: Stack(
                       children: [
                         Center(
@@ -46,7 +46,7 @@ class AssessmentPage5 extends StatelessWidget {
                             width: 135.r,
                             child: CircularProgressIndicator(
                               value: 12 / 18,
-                              strokeWidth: 8,
+                              strokeWidth: 15.r,
                               valueColor: const AlwaysStoppedAnimation(
                                 ColorsManager.teal,
                               ),
@@ -72,7 +72,7 @@ class AssessmentPage5 extends StatelessWidget {
                       ],
                     ),
                   ),
-                  verticalSpace(16),
+                  verticalSpace(32),
                   const Divider(
                     height: 0,
                     color: ColorsManager.fieldBorder,

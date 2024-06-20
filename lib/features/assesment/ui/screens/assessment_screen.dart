@@ -35,17 +35,17 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
       setState(() {
         currentStep = 0;
       });
-      pageController.animateToPage(
-        0,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.ease,
-      );
-      // context.popUntil((route) => route.isFirst);
+      // pageController.animateToPage(
+      //   0,
+      //   duration: const Duration(milliseconds: 300),
+      //   curve: Curves.ease,
+      // );
+      context.popUntil((route) => route.isFirst);
     }
   }
 
   void onBack() {
-    if (currentStep > 0) {
+    if (currentStep > 0 && currentStep < 4) {
       setState(() {
         currentStep--;
       });
@@ -53,6 +53,8 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
         duration: const Duration(milliseconds: 300),
         curve: Curves.ease,
       );
+    } else if (currentStep == 4) {
+      context.popUntil((route) => route.isFirst);
     } else {
       context.pop();
     }

@@ -46,6 +46,7 @@ class AssessmentPage4 extends StatelessWidget {
             '1 correct',
             style: TextStyles.orangeText2ExtraBold14,
           ),
+          verticalSpace(30),
         ],
       ),
     );

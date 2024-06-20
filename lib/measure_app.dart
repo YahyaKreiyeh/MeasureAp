@@ -92,8 +92,8 @@ class MeasureApp extends StatelessWidget {
           // ),
           // themeMode: ThemeMode.dark,
           debugShowCheckedModeBanner: false,
-          // initialRoute: Routes.homeScreen,
-          initialRoute: Routes.assessmentScreen,
+          initialRoute: Routes.navigationScreen,
+          // initialRoute: Routes.assessmentScreen,
           onGenerateRoute: appRouter.generateRoute,
         );
       },

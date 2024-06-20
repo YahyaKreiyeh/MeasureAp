@@ -23,17 +23,19 @@ class AssessmentNavigationButtons extends StatelessWidget {
         if (currentStep > 0)
           AppOutlinedButton(
             onPressed: onBackPressed,
-            child: Icon(
-              Icons.arrow_back_ios_new,
-              size: 24.r,
-              color: ColorsManager.black,
-            ),
+            child: currentStep == 4
+                ? const Text('Back')
+                : Icon(
+                    Icons.arrow_back_ios_new,
+                    size: 24.r,
+                    color: ColorsManager.black,
+                  ),
           ),
         horizontalSpace(10),
         Expanded(
           child: AppElevatedButton(
             onPressed: onContinuePressed,
-            text: 'Continue',
+            text: currentStep == 4 ? 'Print' : 'Continue',
           ),
         ),
       ],
