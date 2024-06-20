@@ -6,8 +6,8 @@ import 'package:measureapp/core/utils/constants/styles.dart';
 import 'package:measureapp/features/assesment/logic/assessment_1_cubit.dart';
 import 'package:measureapp/features/assesment/ui/widgets/correct_incorrect_question_button.dart';
 
-class AssessmentPage1 extends StatelessWidget {
-  const AssessmentPage1({
+class AssessmentView1 extends StatelessWidget {
+  const AssessmentView1({
     super.key,
   });
 

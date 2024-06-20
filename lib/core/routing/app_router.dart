@@ -5,7 +5,7 @@ import 'package:measureapp/features/assesment/logic/assessment_cubit.dart';
 import 'package:measureapp/features/assesment/ui/screens/assessment_screen.dart';
 import 'package:measureapp/features/home/ui/screens/home_screen.dart';
 import 'package:measureapp/features/home/ui/screens/new_assessment_screen.dart';
-import 'package:measureapp/navigation_screen.dart';
+import 'package:measureapp/features/navigation/ui/screens/navigation_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {

@@ -6,8 +6,8 @@ import 'package:measureapp/features/assesment/logic/expandable_text_cubit.dart';
 import 'package:measureapp/features/assesment/ui/widgets/check_button.dart';
 import 'package:measureapp/features/assesment/ui/widgets/expandapble_text.dart';
 
-class AssessmentPage2 extends StatelessWidget {
-  const AssessmentPage2({
+class AssessmentView2 extends StatelessWidget {
+  const AssessmentView2({
     super.key,
   });
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/helpers/extensions.dart';
-import 'package:measureapp/core/helpers/loading.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/routing/routes.dart';
 import 'package:measureapp/core/widgets/buttons/app_elevated_button.dart';
@@ -25,9 +24,8 @@ class NewAssessmentScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 verticalSpace(30),
-                const Text('Cognitive status'),
-                verticalSpace(4),
                 AppDropdownButtonFormField(
+                  label: 'Cognitive status',
                   hint: 'Select cognitive status',
                   items: const [
                     DropdownMenuItem(
@@ -46,9 +44,9 @@ class NewAssessmentScreen extends StatelessWidget {
                   onChanged: (value) {},
                 ),
                 verticalSpace(30),
-                const Text('Applicable measures'),
-                verticalSpace(4),
                 AppDropdownButtonFormField(
+                  label: 'Applicable measures',
+                  enabled: false,
                   hint: 'Select applicable measures',
                   items: const [
                     DropdownMenuItem(
@@ -67,9 +65,9 @@ class NewAssessmentScreen extends StatelessWidget {
                   onChanged: (value) {},
                 ),
                 verticalSpace(30),
-                const Text('Patient'),
-                verticalSpace(4),
                 AppDropdownButtonFormField(
+                  label: 'Patient',
+                  enabled: false,
                   hint: 'Select applicable measures',
                   items: const [
                     DropdownMenuItem(
@@ -97,7 +95,6 @@ class NewAssessmentScreen extends StatelessWidget {
         child: AppElevatedButton(
           text: 'Start assessment',
           onPressed: () async {
-            loading(context);
             await Future.delayed(const Duration(seconds: 5));
             if (context.mounted) {
               context.pop();

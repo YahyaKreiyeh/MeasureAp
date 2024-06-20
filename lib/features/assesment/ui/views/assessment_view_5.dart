@@ -4,8 +4,8 @@ import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/colors.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
 
-class AssessmentPage5 extends StatelessWidget {
-  const AssessmentPage5({
+class AssessmentView5 extends StatelessWidget {
+  const AssessmentView5({
     super.key,
   });
 

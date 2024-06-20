@@ -4,8 +4,8 @@ import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
 import 'package:measureapp/features/assesment/ui/widgets/animal_toggle.dart';
 
-class AssessmentPage4 extends StatelessWidget {
-  const AssessmentPage4({
+class AssessmentView4 extends StatelessWidget {
+  const AssessmentView4({
     super.key,
   });
 

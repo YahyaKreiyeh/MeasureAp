@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/helpers/extensions.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
-import 'package:measureapp/features/assesment/ui/pages/assessment_page_1.dart';
-import 'package:measureapp/features/assesment/ui/pages/assessment_page_2.dart';
-import 'package:measureapp/features/assesment/ui/pages/assessment_page_3.dart';
-import 'package:measureapp/features/assesment/ui/pages/assessment_page_4.dart';
-import 'package:measureapp/features/assesment/ui/pages/assessment_page_5.dart';
+import 'package:measureapp/features/assesment/ui/views/assessment_view_1.dart';
+import 'package:measureapp/features/assesment/ui/views/assessment_view_2.dart';
+import 'package:measureapp/features/assesment/ui/views/assessment_view_3.dart';
+import 'package:measureapp/features/assesment/ui/views/assessment_view_4.dart';
+import 'package:measureapp/features/assesment/ui/views/assessment_view_5.dart';
 import 'package:measureapp/features/assesment/ui/widgets/assessment_app_bar.dart';
 import 'package:measureapp/features/assesment/ui/widgets/assessment_navigation_buttons.dart';
 import 'package:measureapp/features/assesment/ui/widgets/step_indicator.dart';
@@ -77,11 +77,11 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
                 controller: pageController,
                 physics: const NeverScrollableScrollPhysics(),
                 children: const [
-                  AssessmentPage1(),
-                  AssessmentPage2(),
-                  AssessmentPage3(),
-                  AssessmentPage4(),
-                  AssessmentPage5(),
+                  AssessmentView1(),
+                  AssessmentView2(),
+                  AssessmentView3(),
+                  AssessmentView4(),
+                  AssessmentView5(),
                 ],
               ),
             ),

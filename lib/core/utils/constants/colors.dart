@@ -38,6 +38,7 @@ class ColorsManager {
   static const Color splashBackground = Color(0xFF282425);
   static const Color scaffoldBackground = Color(0xFFF4F4F4);
   static const Color fieldBackground = Color(0xFFF7F7F7);
+  static const Color disabledFieldBackground = Color(0xFFEEEEEE);
 
   // Background container
 

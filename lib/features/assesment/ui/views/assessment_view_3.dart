@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
 
-class AssessmentPage3 extends StatelessWidget {
-  const AssessmentPage3({
+class AssessmentView3 extends StatelessWidget {
+  const AssessmentView3({
     super.key,
   });
 
