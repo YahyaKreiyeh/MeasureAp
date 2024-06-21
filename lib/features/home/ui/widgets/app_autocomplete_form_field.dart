@@ -64,7 +64,9 @@ class AppAutocompleteFormField extends StatelessWidget {
               });
             },
             onSelected: (String selection) {
-              debugPrint('You just selected $selection');
+              if (onChanged != null) {
+                onChanged!(selection);
+              }
             },
             fieldViewBuilder: (BuildContext context,
                 TextEditingController textEditingController,

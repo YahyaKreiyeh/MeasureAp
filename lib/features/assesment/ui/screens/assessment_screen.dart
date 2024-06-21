@@ -35,11 +35,6 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
       setState(() {
         currentStep = 0;
       });
-      // pageController.animateToPage(
-      //   0,
-      //   duration: const Duration(milliseconds: 300),
-      //   curve: Curves.ease,
-      // );
       context.popUntil((route) => route.isFirst);
     }
   }

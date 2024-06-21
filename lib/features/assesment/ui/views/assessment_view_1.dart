@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
-import 'package:measureapp/features/assesment/logic/assessment_1_cubit.dart';
+import 'package:measureapp/features/assesment/logic/correct_incorrect_button_cubit.dart';
 import 'package:measureapp/features/assesment/ui/widgets/correct_incorrect_question_button.dart';
 
 class AssessmentView1 extends StatelessWidget {
@@ -14,7 +14,7 @@ class AssessmentView1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => Assessment1Cubit(),
+      create: (_) => CorrectIncorrectButtonCubit(),
       child: SingleChildScrollView(
         child: Column(
           children: [

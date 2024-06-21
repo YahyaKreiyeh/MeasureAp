@@ -8,8 +8,10 @@ class ColorsManager {
   static const Color secondary = Color(0xFFE6FFF2);
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
-  static const Color red = Color(0xFFF44336);
   static const Color grey = Color(0xFFBBBBBB);
+  static const Color blue = Color(0xFF2196F3);
+  static const Color red = Color(0xFFF44336);
+  static const Color orange = Color(0xFFFF9800);
   static const Color appointmentBackgroundRed = Color(0xFFFFEEEF);
   static const Color appointmentForegroundRed = Color(0xFFF97179);
   static const Color appointmentBackgroundOrange = Color(0xFFFFFBF6);

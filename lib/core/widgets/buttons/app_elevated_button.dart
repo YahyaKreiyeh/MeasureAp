@@ -14,24 +14,77 @@ class AppElevatedButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: ColorsManager.black,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(70).r,
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        if (onPressed != null)
+          Positioned(
+            top: 15.h,
+            child: CustomPaint(
+              painter: GradientShadowPainter(),
+              child: Container(
+                width: 0.88.sw,
+                height: 56.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50.r),
+                ),
+              ),
+            ),
+          ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0).h,
+          child: ElevatedButton(
+            onPressed: onPressed,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: ColorsManager.black,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(70).r,
+              ),
+              minimumSize: Size(0.9.sw, 56.h),
+              side: onPressed != null
+                  ? BorderSide(
+                      width: 1.r,
+                      color: ColorsManager.black,
+                    )
+                  : null,
+              padding: const EdgeInsets.all(14.6).r,
+            ),
+            child: Text(
+              text,
+              style: const TextStyle(
+                color: ColorsManager.white,
+              ),
+            ),
+          ),
         ),
-        minimumSize: Size(100.w, 56.h),
-        side: BorderSide(
-          width: 1.r,
-          color: ColorsManager.black,
-        ),
-        padding: const EdgeInsets.all(14.6).r,
-      ),
-      child: Text(
-        text,
-        style: const TextStyle(color: Colors.white),
-      ),
+      ],
     );
+  }
+}
+
+class GradientShadowPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final Paint paint = Paint()
+      ..shader = LinearGradient(
+        colors: [
+          Colors.blue.withOpacity(0.5),
+          Colors.red.withOpacity(0.5),
+          Colors.orange.withOpacity(0.5)
+        ],
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+      ).createShader(Rect.fromLTWH(0, 0, size.width, size.height))
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 15);
+
+    final RRect rrect = RRect.fromRectAndRadius(
+        Rect.fromLTWH(0, 0, size.width, size.height), Radius.circular(50.r));
+
+    canvas.drawRRect(rrect, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return false;
   }
 }

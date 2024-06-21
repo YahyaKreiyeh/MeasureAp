@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/utils/constants/colors.dart';
 import 'package:measureapp/core/widgets/buttons/app_outlined_button.dart';
-import 'package:measureapp/features/assesment/logic/assessment_1_cubit.dart';
-import 'package:measureapp/features/assesment/logic/assessment_1_state.dart';
+import 'package:measureapp/features/assesment/logic/correct_incorrect_button_cubit.dart';
+import 'package:measureapp/features/assesment/logic/correct_incorrect_button_state.dart';
 
 class CorrectIncorrectQuestionButton extends StatelessWidget {
   final int index;
@@ -18,7 +18,8 @@ class CorrectIncorrectQuestionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<Assessment1Cubit, Assessment1ButtonSelectionState>(
+    return BlocBuilder<CorrectIncorrectButtonCubit,
+        CorrectIncorrectButtonState>(
       builder: (context, state) {
         int? selectedIndex = state.maybeWhen(
           selected: (index) => index,
@@ -27,7 +28,7 @@ class CorrectIncorrectQuestionButton extends StatelessWidget {
 
         return AppOutlinedButton(
           onPressed: () {
-            context.read<Assessment1Cubit>().selectButton(index);
+            context.read<CorrectIncorrectButtonCubit>().selectButton(index);
           },
           minimumSize: Size(double.infinity, 77.h),
           color: selectedIndex == index

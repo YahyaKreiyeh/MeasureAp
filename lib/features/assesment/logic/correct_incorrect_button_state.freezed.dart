@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'assessment_1_state.dart';
+part of 'correct_incorrect_button_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$Assessment1ButtonSelectionState {
+mixin _$CorrectIncorrectButtonState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -57,19 +57,19 @@ mixin _$Assessment1ButtonSelectionState {
 }
 
 /// @nodoc
-abstract class $Assessment1ButtonSelectionStateCopyWith<$Res> {
-  factory $Assessment1ButtonSelectionStateCopyWith(
-          Assessment1ButtonSelectionState value,
-          $Res Function(Assessment1ButtonSelectionState) then) =
-      _$Assessment1ButtonSelectionStateCopyWithImpl<$Res,
-          Assessment1ButtonSelectionState>;
+abstract class $CorrectIncorrectButtonStateCopyWith<$Res> {
+  factory $CorrectIncorrectButtonStateCopyWith(
+          CorrectIncorrectButtonState value,
+          $Res Function(CorrectIncorrectButtonState) then) =
+      _$CorrectIncorrectButtonStateCopyWithImpl<$Res,
+          CorrectIncorrectButtonState>;
 }
 
 /// @nodoc
-class _$Assessment1ButtonSelectionStateCopyWithImpl<$Res,
-        $Val extends Assessment1ButtonSelectionState>
-    implements $Assessment1ButtonSelectionStateCopyWith<$Res> {
-  _$Assessment1ButtonSelectionStateCopyWithImpl(this._value, this._then);
+class _$CorrectIncorrectButtonStateCopyWithImpl<$Res,
+        $Val extends CorrectIncorrectButtonState>
+    implements $CorrectIncorrectButtonStateCopyWith<$Res> {
+  _$CorrectIncorrectButtonStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -86,7 +86,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$Assessment1ButtonSelectionStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$CorrectIncorrectButtonStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -100,7 +100,7 @@ class _$InitialImpl implements Initial {
 
   @override
   String toString() {
-    return 'Assessment1ButtonSelectionState.initial()';
+    return 'CorrectIncorrectButtonState.initial()';
   }
 
   @override
@@ -175,7 +175,7 @@ class _$InitialImpl implements Initial {
   }
 }
 
-abstract class Initial implements Assessment1ButtonSelectionState {
+abstract class Initial implements CorrectIncorrectButtonState {
   const factory Initial() = _$InitialImpl;
 }
 
@@ -190,7 +190,7 @@ abstract class _$$SelectedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SelectedImplCopyWithImpl<$Res>
-    extends _$Assessment1ButtonSelectionStateCopyWithImpl<$Res, _$SelectedImpl>
+    extends _$CorrectIncorrectButtonStateCopyWithImpl<$Res, _$SelectedImpl>
     implements _$$SelectedImplCopyWith<$Res> {
   __$$SelectedImplCopyWithImpl(
       _$SelectedImpl _value, $Res Function(_$SelectedImpl) _then)
@@ -220,7 +220,7 @@ class _$SelectedImpl implements Selected {
 
   @override
   String toString() {
-    return 'Assessment1ButtonSelectionState.selected(index: $index)';
+    return 'CorrectIncorrectButtonState.selected(index: $index)';
   }
 
   @override
@@ -303,7 +303,7 @@ class _$SelectedImpl implements Selected {
   }
 }
 
-abstract class Selected implements Assessment1ButtonSelectionState {
+abstract class Selected implements CorrectIncorrectButtonState {
   const factory Selected(final int index) = _$SelectedImpl;
 
   int get index;
