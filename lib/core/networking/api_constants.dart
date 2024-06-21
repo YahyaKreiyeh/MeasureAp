@@ -1,6 +1,6 @@
 class ApiConstants {
   ApiConstants._();
-  static const String apiBaseUrl = "https://api.xsportsapp.net/api/dashboard/";
+  static const String apiBaseUrl = "https://tjtoevbzbfyhysdoqmfm.supabase.co/";
 }
 
 class ApiErrors {

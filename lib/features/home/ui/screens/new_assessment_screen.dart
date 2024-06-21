@@ -4,6 +4,7 @@ import 'package:measureapp/core/helpers/extensions.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/routing/routes.dart';
 import 'package:measureapp/core/widgets/buttons/app_elevated_button.dart';
+import 'package:measureapp/features/home/ui/widgets/app_autocomplete_form_field.dart';
 import 'package:measureapp/features/home/ui/widgets/app_dropdown_button_form_field.dart';
 
 class NewAssessmentScreen extends StatelessWidget {
@@ -65,10 +66,10 @@ class NewAssessmentScreen extends StatelessWidget {
                   onChanged: (value) {},
                 ),
                 verticalSpace(30),
-                AppDropdownButtonFormField(
+                AppAutocompleteFormField(
                   label: 'Patient',
                   enabled: false,
-                  hint: 'Select applicable measures',
+                  hint: 'Enter patient name or ID',
                   items: const [
                     DropdownMenuItem(
                       value: 'SLUMS',
@@ -84,7 +85,7 @@ class NewAssessmentScreen extends StatelessWidget {
                     ),
                   ],
                   onChanged: (value) {},
-                ),
+                )
               ],
             ),
           ),
