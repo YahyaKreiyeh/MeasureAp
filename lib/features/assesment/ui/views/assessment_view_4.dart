@@ -16,10 +16,13 @@ class AssessmentView4 extends StatefulWidget {
 class AssessmentView4State extends State<AssessmentView4> {
   final Map<String, String> answers = {};
   bool isDialogShown = false;
+  int correctAnswersCount = 0;
 
   void _recordAnswer(String question, bool isCorrect) {
     setState(() {
       answers[question] = isCorrect ? 'correct' : 'incorrect';
+      correctAnswersCount =
+          answers.values.where((answer) => answer == 'correct').length;
     });
     context
         .read<AssessmentCubit>()
@@ -81,7 +84,7 @@ class AssessmentView4State extends State<AssessmentView4> {
           ],
           if (!isDialogShown)
             Text(
-              '1 correct',
+              '$correctAnswersCount correct',
               style: TextStyles.orangeText2ExtraBold14,
             ),
           verticalSpace(30),
