@@ -11,36 +11,33 @@ class NavigationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => NavigationCubit(),
-      child: Scaffold(
-        body: BlocBuilder<NavigationCubit, NavigationState>(
-          builder: (context, state) {
-            final items = context.read<NavigationCubit>().items;
-            return IndexedStack(
-              index: state.selectedIndex,
-              children: items.map((item) => item.content).toList(),
-            );
-          },
-        ),
-        bottomNavigationBar: BlocBuilder<NavigationCubit, NavigationState>(
-          builder: (context, state) {
-            final items = context.read<NavigationCubit>().items;
-            return BottomNavigationBar(
-              backgroundColor: ColorsManager.white,
-              items: items
-                  .map((item) => _buildBottomNavigationBarItem(
-                      item, state.selectedIndex, items.indexOf(item)))
-                  .toList(),
-              currentIndex: state.selectedIndex,
-              showUnselectedLabels: true,
-              selectedItemColor: ColorsManager.orangeBorder,
-              unselectedItemColor: ColorsManager.secondaryText,
-              onTap: (index) =>
-                  context.read<NavigationCubit>().updateIndex(index),
-            );
-          },
-        ),
+    return Scaffold(
+      body: BlocBuilder<NavigationCubit, NavigationState>(
+        builder: (context, state) {
+          final items = context.read<NavigationCubit>().items;
+          return IndexedStack(
+            index: state.selectedIndex,
+            children: items.map((item) => item.content).toList(),
+          );
+        },
+      ),
+      bottomNavigationBar: BlocBuilder<NavigationCubit, NavigationState>(
+        builder: (context, state) {
+          final items = context.read<NavigationCubit>().items;
+          return BottomNavigationBar(
+            backgroundColor: ColorsManager.white,
+            items: items
+                .map((item) => _buildBottomNavigationBarItem(
+                    item, state.selectedIndex, items.indexOf(item)))
+                .toList(),
+            currentIndex: state.selectedIndex,
+            showUnselectedLabels: true,
+            selectedItemColor: ColorsManager.orangeBorder,
+            unselectedItemColor: ColorsManager.secondaryText,
+            onTap: (index) =>
+                context.read<NavigationCubit>().updateIndex(index),
+          );
+        },
       ),
     );
   }

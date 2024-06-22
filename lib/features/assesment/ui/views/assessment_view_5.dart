@@ -3,10 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/colors.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
+import 'package:measureapp/features/assesment/data/models/create_assessment_request_response.dart';
 
 class AssessmentView5 extends StatelessWidget {
+  final CreateAssessmentRequestResponse? response;
+
   const AssessmentView5({
     super.key,
+    required this.response,
   });
 
   @override
@@ -45,7 +49,10 @@ class AssessmentView5 extends StatelessWidget {
                             height: 135.r,
                             width: 135.r,
                             child: CircularProgressIndicator(
-                              value: 12 / 18,
+                              value: response != null
+                                  ? (response!.assessment.result.toDouble() /
+                                      18)
+                                  : 0.0,
                               strokeWidth: 15.r,
                               valueColor: const AlwaysStoppedAnimation(
                                 ColorsManager.teal,
@@ -59,7 +66,9 @@ class AssessmentView5 extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '12',
+                                response != null
+                                    ? response!.assessment.result.toString()
+                                    : '0',
                                 style: TextStyles.primaryTextBold36,
                               ),
                               Text(
@@ -80,33 +89,26 @@ class AssessmentView5 extends StatelessWidget {
                   verticalSpace(16),
                   Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Question 1',
-                            style: TextStyles.primaryTextMedium14,
-                          ),
-                          Text(
-                            'Correct',
-                            style: TextStyles.successGreenBold14,
-                          ),
-                        ],
-                      ),
+                      buildQuestionResult(
+                          'Question 1', response?.assessment.question1),
                       verticalSpace(16),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Question 2',
-                            style: TextStyles.primaryTextMedium14,
-                          ),
-                          Text(
-                            'Incorrect',
-                            style: TextStyles.failRedBold14,
-                          ),
-                        ],
-                      ),
+                      buildQuestionResult(
+                          'Question 2', response?.assessment.question2),
+                      verticalSpace(16),
+                      buildQuestionResult(
+                          'Question 3', response?.assessment.question3),
+                      verticalSpace(16),
+                      buildQuestionResult(
+                          'Question 4', response?.assessment.question4),
+                      verticalSpace(16),
+                      buildQuestionResult(
+                          'Question 5', response?.assessment.question5),
+                      verticalSpace(16),
+                      buildQuestionResult(
+                          'Question 6', response?.assessment.question6),
+                      verticalSpace(16),
+                      buildQuestionResult(
+                          'Question 7', response?.assessment.question7),
                       verticalSpace(16),
                     ],
                   ),
@@ -116,6 +118,24 @@ class AssessmentView5 extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  Widget buildQuestionResult(String question, String? result) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          question,
+          style: TextStyles.primaryTextMedium14,
+        ),
+        Text(
+          result == 'correct' ? 'Correct' : 'Incorrect',
+          style: result == 'correct'
+              ? TextStyles.successGreenBold14
+              : TextStyles.failRedBold14,
+        ),
+      ],
     );
   }
 }

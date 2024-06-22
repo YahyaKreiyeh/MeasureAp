@@ -5,21 +5,15 @@ part 'new_assessment_state.freezed.dart';
 @freezed
 class NewAssessmentState with _$NewAssessmentState {
   const factory NewAssessmentState({
-    required bool isFirstDropdownEnabled,
-    required bool isSecondDropdownEnabled,
-    required bool isAutocompleteEnabled,
-    required bool isButtonEnabled,
-    required bool isLoading,
+    @Default(true) bool isFirstDropdownEnabled,
+    @Default(false) bool isSecondDropdownEnabled,
+    @Default(false) bool isAutocompleteEnabled,
+    @Default(false) bool isButtonEnabled,
+    @Default(false) bool isLoading,
     String? selectedFirstDropdownItem,
     String? selectedSecondDropdownItem,
     String? selectedAutocompleteItem,
   }) = _NewAssessmentState;
 
-  factory NewAssessmentState.initial() => const NewAssessmentState(
-        isFirstDropdownEnabled: true,
-        isSecondDropdownEnabled: false,
-        isAutocompleteEnabled: false,
-        isButtonEnabled: false,
-        isLoading: false,
-      );
+  factory NewAssessmentState.initial() => const NewAssessmentState();
 }

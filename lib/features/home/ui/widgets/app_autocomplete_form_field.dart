@@ -25,14 +25,14 @@ class AppAutocompleteFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> options = [
-      'Apple',
-      'Banana',
-      'Cherry',
-      'Date',
-      'Elderberry',
-      'Fig',
-      'Grape',
-      'Honeydew',
+      'Yahya',
+      'Luka',
+      'Mike',
+      'Richard',
+      'Adam',
+      'Britni',
+      'Carl',
+      'Dan',
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

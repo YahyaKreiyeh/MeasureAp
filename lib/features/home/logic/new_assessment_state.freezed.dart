@@ -186,24 +186,29 @@ class __$$NewAssessmentStateImplCopyWithImpl<$Res>
 
 class _$NewAssessmentStateImpl implements _NewAssessmentState {
   const _$NewAssessmentStateImpl(
-      {required this.isFirstDropdownEnabled,
-      required this.isSecondDropdownEnabled,
-      required this.isAutocompleteEnabled,
-      required this.isButtonEnabled,
-      required this.isLoading,
+      {this.isFirstDropdownEnabled = true,
+      this.isSecondDropdownEnabled = false,
+      this.isAutocompleteEnabled = false,
+      this.isButtonEnabled = false,
+      this.isLoading = false,
       this.selectedFirstDropdownItem,
       this.selectedSecondDropdownItem,
       this.selectedAutocompleteItem});
 
   @override
+  @JsonKey()
   final bool isFirstDropdownEnabled;
   @override
+  @JsonKey()
   final bool isSecondDropdownEnabled;
   @override
+  @JsonKey()
   final bool isAutocompleteEnabled;
   @override
+  @JsonKey()
   final bool isButtonEnabled;
   @override
+  @JsonKey()
   final bool isLoading;
   @override
   final String? selectedFirstDropdownItem;
@@ -267,11 +272,11 @@ class _$NewAssessmentStateImpl implements _NewAssessmentState {
 
 abstract class _NewAssessmentState implements NewAssessmentState {
   const factory _NewAssessmentState(
-      {required final bool isFirstDropdownEnabled,
-      required final bool isSecondDropdownEnabled,
-      required final bool isAutocompleteEnabled,
-      required final bool isButtonEnabled,
-      required final bool isLoading,
+      {final bool isFirstDropdownEnabled,
+      final bool isSecondDropdownEnabled,
+      final bool isAutocompleteEnabled,
+      final bool isButtonEnabled,
+      final bool isLoading,
       final String? selectedFirstDropdownItem,
       final String? selectedSecondDropdownItem,
       final String? selectedAutocompleteItem}) = _$NewAssessmentStateImpl;

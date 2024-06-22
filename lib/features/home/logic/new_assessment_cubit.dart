@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'new_assessment_state.dart';
 
@@ -32,5 +32,6 @@ class NewAssessmentCubit extends Cubit<NewAssessmentState> {
 
   void stopLoading() {
     emit(state.copyWith(isLoading: false));
+    emit(NewAssessmentState.initial());
   }
 }

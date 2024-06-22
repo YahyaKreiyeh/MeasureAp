@@ -23,10 +23,10 @@ class AppElevatedButton extends StatelessWidget {
             child: CustomPaint(
               painter: GradientShadowPainter(),
               child: Container(
-                width: 0.88.sw,
+                width: 0.85.sw,
                 height: 56.h,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50.r),
+                  borderRadius: BorderRadius.circular(70.r),
                 ),
               ),
             ),
@@ -78,7 +78,7 @@ class GradientShadowPainter extends CustomPainter {
       ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 15);
 
     final RRect rrect = RRect.fromRectAndRadius(
-        Rect.fromLTWH(0, 0, size.width, size.height), Radius.circular(50.r));
+        Rect.fromLTWH(0, 0, size.width, size.height), Radius.circular(70.r));
 
     canvas.drawRRect(rrect, paint);
   }

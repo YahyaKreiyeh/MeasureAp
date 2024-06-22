@@ -16,7 +16,6 @@ void main() {
     await tester.pumpWidget(
       MeasureApp(
         appRouter: AppRouter(),
-        initialRoute: '',
       ),
     );
 

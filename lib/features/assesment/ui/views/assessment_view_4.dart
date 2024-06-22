@@ -1,13 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
+import 'package:measureapp/features/assesment/logic/assessment_cubit.dart';
 import 'package:measureapp/features/assesment/ui/widgets/animal_toggle.dart';
 
-class AssessmentView4 extends StatelessWidget {
-  const AssessmentView4({
-    super.key,
-  });
+class AssessmentView4 extends StatefulWidget {
+  const AssessmentView4({super.key});
+
+  @override
+  AssessmentView4State createState() => AssessmentView4State();
+}
+
+class AssessmentView4State extends State<AssessmentView4> {
+  final Map<String, String> answers = {};
+  bool isDialogShown = false;
+
+  void _recordAnswer(String question, bool isCorrect) {
+    setState(() {
+      answers[question] = isCorrect ? 'correct' : 'incorrect';
+    });
+    context
+        .read<AssessmentCubit>()
+        .recordAnswer(question, isCorrect ? 'correct' : 'incorrect');
+  }
+
+  void _toggleDialogVisibility() {
+    setState(() {
+      isDialogShown = !isDialogShown;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,22 +53,37 @@ class AssessmentView4 extends StatelessWidget {
             ),
           ),
           verticalSpace(32),
-          const AnimalToggle(
-            name: 'Chicken',
-            emoji: '🐓',
-          ),
-          const AnimalToggle(
-            name: 'Horse',
-            emoji: '🐎',
-          ),
-          const AnimalToggle(
-            name: 'Dog',
-            emoji: '🐕',
-          ),
-          Text(
-            '1 correct',
-            style: TextStyles.orangeText2ExtraBold14,
-          ),
+          if (!isDialogShown) ...[
+            AnimalToggle(
+              name: 'Chicken',
+              emoji: '🐓',
+              onToggled: (isCorrect) {
+                _recordAnswer('question5', isCorrect);
+              },
+              onShowDialog: _toggleDialogVisibility,
+            ),
+            AnimalToggle(
+              name: 'Horse',
+              emoji: '🐎',
+              onToggled: (isCorrect) {
+                _recordAnswer('question6', isCorrect);
+              },
+              onShowDialog: _toggleDialogVisibility,
+            ),
+            AnimalToggle(
+              name: 'Dog',
+              emoji: '🐕',
+              onToggled: (isCorrect) {
+                _recordAnswer('question7', isCorrect);
+              },
+              onShowDialog: _toggleDialogVisibility,
+            ),
+          ],
+          if (!isDialogShown)
+            Text(
+              '1 correct',
+              style: TextStyles.orangeText2ExtraBold14,
+            ),
           verticalSpace(30),
         ],
       ),

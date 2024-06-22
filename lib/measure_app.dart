@@ -7,12 +7,10 @@ import 'package:measureapp/core/utils/constants/styles.dart';
 
 class MeasureApp extends StatelessWidget {
   final AppRouter appRouter;
-  final String initialRoute;
 
   const MeasureApp({
     super.key,
     required this.appRouter,
-    required this.initialRoute,
   });
 
   @override

@@ -35,7 +35,11 @@ class AssessmentNavigationButtons extends StatelessWidget {
         Expanded(
           child: AppElevatedButton(
             onPressed: onContinuePressed,
-            text: currentStep == 4 ? 'Print' : 'Continue',
+            text: currentStep == 3
+                ? 'Finish'
+                : currentStep == 4
+                    ? 'Print'
+                    : 'Continue',
           ),
         ),
       ],

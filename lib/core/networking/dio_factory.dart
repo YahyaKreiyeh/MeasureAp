@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:measureapp/core/utils/constants/string_constants.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 final getIt = GetIt.instance;
@@ -30,6 +31,16 @@ class DioFactory {
         requestBody: true,
         requestHeader: true,
         responseHeader: true,
+      ),
+    );
+
+    dioInstance.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          options.headers['Authorization'] = 'Bearer ${StringConstants.token}';
+          options.headers['apikey'] = StringConstants.token;
+          return handler.next(options);
+        },
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'create_assessment_request_body.g.dart';
 
@@ -26,13 +26,10 @@ class Assessment {
   final String question6;
   final String question7;
   @JsonKey(name: 'patient_id')
-  @Default(1)
   final int patientId;
   @JsonKey(name: 'cognitive_status_id')
-  @Default(1)
   final int cognitiveStatusId;
   @JsonKey(name: 'applicable_measures_id')
-  @Default(1)
   final int applicableMeasuresId;
 
   Assessment({

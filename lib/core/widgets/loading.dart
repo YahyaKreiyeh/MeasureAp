@@ -6,13 +6,11 @@ class Loading extends StatelessWidget {
   const Loading({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: AssetsManager.lottie.loading.lottie(
-        repeat: false,
-        height: 150.w,
-        width: 150.w,
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Center(
+        child: AssetsManager.lottie.loading.lottie(
+          repeat: false,
+          height: 150.w,
+          width: 150.w,
+        ),
+      );
 }
