@@ -15,8 +15,6 @@ final getIt = GetIt.instance;
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
-    // final arguments = settings.arguments;
-
     switch (settings.name) {
       case Routes.navigationScreen:
         return MaterialPageRoute(
@@ -30,10 +28,14 @@ class AppRouter {
           builder: (_) => const HomeScreen(),
         );
       case Routes.newAssessmentScreen:
+        final arguments = settings.arguments;
+        // context.read<NewAssessmentCubit>().selectSecondDropdownItem(value!);
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => NewAssessmentCubit(),
-            child: const NewAssessmentScreen(),
+            child: NewAssessmentScreen(
+              arguments: arguments,
+            ),
           ),
         );
       case Routes.assessmentScreen:

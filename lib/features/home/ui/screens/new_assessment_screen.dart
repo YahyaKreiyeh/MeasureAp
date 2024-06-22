@@ -12,10 +12,27 @@ import 'package:measureapp/features/home/ui/widgets/app_autocomplete_form_field.
 import 'package:measureapp/features/home/ui/widgets/app_dropdown_button_form_field.dart';
 
 class NewAssessmentScreen extends StatelessWidget {
-  const NewAssessmentScreen({super.key});
+  final dynamic arguments;
+  const NewAssessmentScreen({
+    super.key,
+    this.arguments,
+  });
 
   @override
   Widget build(BuildContext context) {
+    String? cognitiveStatus;
+    String? applicableMeasures;
+    if (arguments != null) {
+      cognitiveStatus = arguments?['cognitiveStatus'];
+      applicableMeasures = arguments?['applicableMeasures'];
+      context
+          .read<NewAssessmentCubit>()
+          .selectFirstDropdownItem(cognitiveStatus!);
+      context
+          .read<NewAssessmentCubit>()
+          .selectSecondDropdownItem(applicableMeasures!);
+    }
+
     return BlocBuilder<NewAssessmentCubit, NewAssessmentState>(
       builder: (context, state) {
         return Scaffold(
@@ -26,7 +43,12 @@ class NewAssessmentScreen extends StatelessWidget {
           body: SafeArea(
             child: state.isLoading
                 ? const Loading()
-                : buildInitialForm(context, state),
+                : buildInitialForm(
+                    context,
+                    state,
+                    cognitiveStatus,
+                    applicableMeasures,
+                  ),
           ),
           floatingActionButton: state.isLoading
               ? const SizedBox.shrink()
@@ -53,7 +75,12 @@ class NewAssessmentScreen extends StatelessWidget {
     );
   }
 
-  Widget buildInitialForm(BuildContext context, NewAssessmentState state) {
+  Widget buildInitialForm(
+    BuildContext context,
+    NewAssessmentState state,
+    String? cognitiveStatus,
+    String? applicableMeasures,
+  ) {
     return SizedBox(
       width: double.infinity,
       child: SingleChildScrollView(
@@ -80,6 +107,7 @@ class NewAssessmentScreen extends StatelessWidget {
                     .read<NewAssessmentCubit>()
                     .selectFirstDropdownItem(value!);
               },
+              value: cognitiveStatus,
             ),
             verticalSpace(30),
             AppDropdownButtonFormField(
@@ -105,6 +133,7 @@ class NewAssessmentScreen extends StatelessWidget {
                     .selectSecondDropdownItem(value!);
               },
               enabled: state.isSecondDropdownEnabled,
+              value: applicableMeasures,
             ),
             verticalSpace(30),
             AppAutocompleteFormField(
