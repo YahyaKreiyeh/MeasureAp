@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:measureapp/features/assesment/data/models/create_assessment_request_body.dart'
-    as s;
+import 'package:measureapp/features/assesment/data/models/create_assessment_request_body.dart';
 import 'package:measureapp/features/assesment/data/repos/assessment_repo.dart';
 import 'package:measureapp/features/assesment/logic/assessment_state.dart';
 
 class AssessmentCubit extends Cubit<AssessmentState> {
   final AssessmentRepo assessmentRepo;
+  int selectedIndex = -1;
 
   AssessmentCubit(this.assessmentRepo) : super(const AssessmentState.initial());
 
@@ -15,11 +15,16 @@ class AssessmentCubit extends Cubit<AssessmentState> {
     _answers[question] = answer;
   }
 
-  Future<void> submitAssessment() async {
+  void selectAnswer(int index) {
+    selectedIndex = index;
+    emit(AssessmentState.answerSelected(selectedIndex: selectedIndex));
+  }
+
+  Future<void> createAssessment() async {
     emit(const AssessmentState.loading());
 
-    final assessment = s.CreateAssessmentRequestBody(
-      assessment: s.Assessment(
+    final assessment = CreateAssessmentRequestBody(
+      assessment: Assessment(
         question1: _answers['question1'] ?? 'incorrect',
         question2: _answers['question2'] ?? 'incorrect',
         question3: _answers['question3'] ?? 'incorrect',

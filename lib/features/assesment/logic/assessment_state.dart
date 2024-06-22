@@ -10,4 +10,6 @@ class AssessmentState with _$AssessmentState {
   const factory AssessmentState.success(
       CreateAssessmentRequestResponse response) = _Success;
   const factory AssessmentState.failure({required String message}) = _Failure;
+  const factory AssessmentState.answerSelected({required int selectedIndex}) =
+      _AnswerSelected;
 }

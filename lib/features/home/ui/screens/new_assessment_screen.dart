@@ -16,44 +16,40 @@ class NewAssessmentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('New assessment'),
-      ),
-      body: SafeArea(
-        child: BlocBuilder<NewAssessmentCubit, NewAssessmentState>(
-          builder: (context, state) {
-            return state.isLoading
+    return BlocBuilder<NewAssessmentCubit, NewAssessmentState>(
+      builder: (context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const Text('New assessment'),
+            automaticallyImplyLeading: !state.isLoading,
+          ),
+          body: SafeArea(
+            child: state.isLoading
                 ? const Loading()
-                : buildInitialForm(context, state);
-          },
-        ),
-      ),
-      floatingActionButton: BlocBuilder<NewAssessmentCubit, NewAssessmentState>(
-        builder: (context, state) {
-          if (state.isLoading) {
-            return const SizedBox.shrink();
-          }
-          return SizedBox(
-            width: 0.9.sw,
-            child: AppElevatedButton(
-              text: 'Start assessment',
-              onPressed: state.isButtonEnabled
-                  ? () async {
-                      context.read<NewAssessmentCubit>().startLoading();
-                      await Future.delayed(
-                        const Duration(seconds: 4),
-                      );
-                      if (context.mounted) {
-                        context.read<NewAssessmentCubit>().stopLoading();
-                        context.pushNamed(Routes.assessmentScreen);
-                      }
-                    }
-                  : null,
-            ),
-          );
-        },
-      ),
+                : buildInitialForm(context, state),
+          ),
+          floatingActionButton: state.isLoading
+              ? const SizedBox.shrink()
+              : SizedBox(
+                  width: 0.9.sw,
+                  child: AppElevatedButton(
+                    text: 'Start assessment',
+                    onPressed: state.isButtonEnabled
+                        ? () async {
+                            context.read<NewAssessmentCubit>().startLoading();
+                            await Future.delayed(
+                              const Duration(seconds: 4),
+                            );
+                            if (context.mounted) {
+                              context.read<NewAssessmentCubit>().stopLoading();
+                              context.pushNamed(Routes.assessmentScreen);
+                            }
+                          }
+                        : null,
+                  ),
+                ),
+        );
+      },
     );
   }
 

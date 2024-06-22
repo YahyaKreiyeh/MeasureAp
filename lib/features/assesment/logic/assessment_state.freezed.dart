@@ -22,6 +22,7 @@ mixin _$AssessmentState {
     required TResult Function() loading,
     required TResult Function(CreateAssessmentRequestResponse response) success,
     required TResult Function(String message) failure,
+    required TResult Function(int selectedIndex) answerSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$AssessmentState {
     TResult? Function()? loading,
     TResult? Function(CreateAssessmentRequestResponse response)? success,
     TResult? Function(String message)? failure,
+    TResult? Function(int selectedIndex)? answerSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +40,7 @@ mixin _$AssessmentState {
     TResult Function()? loading,
     TResult Function(CreateAssessmentRequestResponse response)? success,
     TResult Function(String message)? failure,
+    TResult Function(int selectedIndex)? answerSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +50,7 @@ mixin _$AssessmentState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_AnswerSelected value) answerSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +59,7 @@ mixin _$AssessmentState {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_AnswerSelected value)? answerSelected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +68,7 @@ mixin _$AssessmentState {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failure value)? failure,
+    TResult Function(_AnswerSelected value)? answerSelected,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,6 +134,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() loading,
     required TResult Function(CreateAssessmentRequestResponse response) success,
     required TResult Function(String message) failure,
+    required TResult Function(int selectedIndex) answerSelected,
   }) {
     return initial();
   }
@@ -139,6 +146,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? loading,
     TResult? Function(CreateAssessmentRequestResponse response)? success,
     TResult? Function(String message)? failure,
+    TResult? Function(int selectedIndex)? answerSelected,
   }) {
     return initial?.call();
   }
@@ -150,6 +158,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? loading,
     TResult Function(CreateAssessmentRequestResponse response)? success,
     TResult Function(String message)? failure,
+    TResult Function(int selectedIndex)? answerSelected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -165,6 +174,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_AnswerSelected value) answerSelected,
   }) {
     return initial(this);
   }
@@ -176,6 +186,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_AnswerSelected value)? answerSelected,
   }) {
     return initial?.call(this);
   }
@@ -187,6 +198,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failure value)? failure,
+    TResult Function(_AnswerSelected value)? answerSelected,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -242,6 +254,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() loading,
     required TResult Function(CreateAssessmentRequestResponse response) success,
     required TResult Function(String message) failure,
+    required TResult Function(int selectedIndex) answerSelected,
   }) {
     return loading();
   }
@@ -253,6 +266,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? loading,
     TResult? Function(CreateAssessmentRequestResponse response)? success,
     TResult? Function(String message)? failure,
+    TResult? Function(int selectedIndex)? answerSelected,
   }) {
     return loading?.call();
   }
@@ -264,6 +278,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? loading,
     TResult Function(CreateAssessmentRequestResponse response)? success,
     TResult Function(String message)? failure,
+    TResult Function(int selectedIndex)? answerSelected,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -279,6 +294,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_AnswerSelected value) answerSelected,
   }) {
     return loading(this);
   }
@@ -290,6 +306,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_AnswerSelected value)? answerSelected,
   }) {
     return loading?.call(this);
   }
@@ -301,6 +318,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failure value)? failure,
+    TResult Function(_AnswerSelected value)? answerSelected,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -383,6 +401,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() loading,
     required TResult Function(CreateAssessmentRequestResponse response) success,
     required TResult Function(String message) failure,
+    required TResult Function(int selectedIndex) answerSelected,
   }) {
     return success(response);
   }
@@ -394,6 +413,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? loading,
     TResult? Function(CreateAssessmentRequestResponse response)? success,
     TResult? Function(String message)? failure,
+    TResult? Function(int selectedIndex)? answerSelected,
   }) {
     return success?.call(response);
   }
@@ -405,6 +425,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? loading,
     TResult Function(CreateAssessmentRequestResponse response)? success,
     TResult Function(String message)? failure,
+    TResult Function(int selectedIndex)? answerSelected,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -420,6 +441,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_AnswerSelected value) answerSelected,
   }) {
     return success(this);
   }
@@ -431,6 +453,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_AnswerSelected value)? answerSelected,
   }) {
     return success?.call(this);
   }
@@ -442,6 +465,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failure value)? failure,
+    TResult Function(_AnswerSelected value)? answerSelected,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -529,6 +553,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function() loading,
     required TResult Function(CreateAssessmentRequestResponse response) success,
     required TResult Function(String message) failure,
+    required TResult Function(int selectedIndex) answerSelected,
   }) {
     return failure(message);
   }
@@ -540,6 +565,7 @@ class _$FailureImpl implements _Failure {
     TResult? Function()? loading,
     TResult? Function(CreateAssessmentRequestResponse response)? success,
     TResult? Function(String message)? failure,
+    TResult? Function(int selectedIndex)? answerSelected,
   }) {
     return failure?.call(message);
   }
@@ -551,6 +577,7 @@ class _$FailureImpl implements _Failure {
     TResult Function()? loading,
     TResult Function(CreateAssessmentRequestResponse response)? success,
     TResult Function(String message)? failure,
+    TResult Function(int selectedIndex)? answerSelected,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -566,6 +593,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Failure value) failure,
+    required TResult Function(_AnswerSelected value) answerSelected,
   }) {
     return failure(this);
   }
@@ -577,6 +605,7 @@ class _$FailureImpl implements _Failure {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Failure value)? failure,
+    TResult? Function(_AnswerSelected value)? answerSelected,
   }) {
     return failure?.call(this);
   }
@@ -588,6 +617,7 @@ class _$FailureImpl implements _Failure {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Failure value)? failure,
+    TResult Function(_AnswerSelected value)? answerSelected,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -603,5 +633,159 @@ abstract class _Failure implements AssessmentState {
   String get message;
   @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AnswerSelectedImplCopyWith<$Res> {
+  factory _$$AnswerSelectedImplCopyWith(_$AnswerSelectedImpl value,
+          $Res Function(_$AnswerSelectedImpl) then) =
+      __$$AnswerSelectedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int selectedIndex});
+}
+
+/// @nodoc
+class __$$AnswerSelectedImplCopyWithImpl<$Res>
+    extends _$AssessmentStateCopyWithImpl<$Res, _$AnswerSelectedImpl>
+    implements _$$AnswerSelectedImplCopyWith<$Res> {
+  __$$AnswerSelectedImplCopyWithImpl(
+      _$AnswerSelectedImpl _value, $Res Function(_$AnswerSelectedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? selectedIndex = null,
+  }) {
+    return _then(_$AnswerSelectedImpl(
+      selectedIndex: null == selectedIndex
+          ? _value.selectedIndex
+          : selectedIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AnswerSelectedImpl implements _AnswerSelected {
+  const _$AnswerSelectedImpl({required this.selectedIndex});
+
+  @override
+  final int selectedIndex;
+
+  @override
+  String toString() {
+    return 'AssessmentState.answerSelected(selectedIndex: $selectedIndex)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AnswerSelectedImpl &&
+            (identical(other.selectedIndex, selectedIndex) ||
+                other.selectedIndex == selectedIndex));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, selectedIndex);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AnswerSelectedImplCopyWith<_$AnswerSelectedImpl> get copyWith =>
+      __$$AnswerSelectedImplCopyWithImpl<_$AnswerSelectedImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(CreateAssessmentRequestResponse response) success,
+    required TResult Function(String message) failure,
+    required TResult Function(int selectedIndex) answerSelected,
+  }) {
+    return answerSelected(selectedIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(CreateAssessmentRequestResponse response)? success,
+    TResult? Function(String message)? failure,
+    TResult? Function(int selectedIndex)? answerSelected,
+  }) {
+    return answerSelected?.call(selectedIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(CreateAssessmentRequestResponse response)? success,
+    TResult Function(String message)? failure,
+    TResult Function(int selectedIndex)? answerSelected,
+    required TResult orElse(),
+  }) {
+    if (answerSelected != null) {
+      return answerSelected(selectedIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_AnswerSelected value) answerSelected,
+  }) {
+    return answerSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_AnswerSelected value)? answerSelected,
+  }) {
+    return answerSelected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_AnswerSelected value)? answerSelected,
+    required TResult orElse(),
+  }) {
+    if (answerSelected != null) {
+      return answerSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AnswerSelected implements AssessmentState {
+  const factory _AnswerSelected({required final int selectedIndex}) =
+      _$AnswerSelectedImpl;
+
+  int get selectedIndex;
+  @JsonKey(ignore: true)
+  _$$AnswerSelectedImplCopyWith<_$AnswerSelectedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

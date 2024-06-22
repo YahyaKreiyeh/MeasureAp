@@ -4,24 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
 import 'package:measureapp/features/assesment/logic/assessment_cubit.dart';
+import 'package:measureapp/features/assesment/logic/assessment_state.dart';
 import 'package:measureapp/features/assesment/ui/widgets/correct_incorrect_question_button.dart';
 
-class AssessmentView1 extends StatefulWidget {
+class AssessmentView1 extends StatelessWidget {
   const AssessmentView1({super.key});
-
-  @override
-  AssessmentView1State createState() => AssessmentView1State();
-}
-
-class AssessmentView1State extends State<AssessmentView1> {
-  int? selectedIndex;
-
-  void selectAnswer(int index, String answer) {
-    setState(() {
-      selectedIndex = index;
-    });
-    context.read<AssessmentCubit>().recordAnswer('question1', answer);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,22 +31,38 @@ class AssessmentView1State extends State<AssessmentView1> {
             ),
           ),
           verticalSpace(32),
-          Column(
-            children: [
-              CorrectIncorrectQuestionButton(
-                index: 0,
-                label: 'Correct',
-                isSelected: selectedIndex == 0,
-                onSelected: () => selectAnswer(0, 'correct'),
-              ),
-              verticalSpace(13),
-              CorrectIncorrectQuestionButton(
-                index: 1,
-                label: 'Incorrect',
-                isSelected: selectedIndex == 1,
-                onSelected: () => selectAnswer(1, 'incorrect'),
-              ),
-            ],
+          BlocBuilder<AssessmentCubit, AssessmentState>(
+            builder: (context, state) {
+              return Column(
+                children: [
+                  CorrectIncorrectQuestionButton(
+                    index: 0,
+                    label: 'Correct',
+                    isSelected:
+                        context.read<AssessmentCubit>().selectedIndex == 0,
+                    onSelected: () {
+                      context
+                          .read<AssessmentCubit>()
+                          .recordAnswer('question1', 'correct');
+                      context.read<AssessmentCubit>().selectAnswer(0);
+                    },
+                  ),
+                  verticalSpace(13),
+                  CorrectIncorrectQuestionButton(
+                    index: 1,
+                    label: 'Incorrect',
+                    isSelected:
+                        context.read<AssessmentCubit>().selectedIndex == 1,
+                    onSelected: () {
+                      context
+                          .read<AssessmentCubit>()
+                          .recordAnswer('question1', 'incorrect');
+                      context.read<AssessmentCubit>().selectAnswer(1);
+                    },
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),

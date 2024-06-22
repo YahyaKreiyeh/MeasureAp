@@ -37,7 +37,7 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
         curve: Curves.ease,
       );
     } else if (currentStep == 3) {
-      await context.read<AssessmentCubit>().submitAssessment();
+      await context.read<AssessmentCubit>().createAssessment();
     } else {
       null;
     }

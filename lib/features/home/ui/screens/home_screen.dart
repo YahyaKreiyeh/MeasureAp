@@ -34,9 +34,18 @@ class HomeScreen extends StatelessWidget {
                   verticalSpace(38),
                   const SectionTitle(),
                   verticalSpace(6),
-                  const RecentAssessmentsCard(),
-                  const RecentAssessmentsCard(),
-                  const RecentAssessmentsCard(),
+                  const RecentAssessmentsCard(
+                    cognitiveStatus: 'Cognition',
+                    applicableMeasures: 'SLUMS',
+                  ),
+                  const RecentAssessmentsCard(
+                    cognitiveStatus: 'Unconscious',
+                    applicableMeasures: 'CPR',
+                  ),
+                  const RecentAssessmentsCard(
+                    cognitiveStatus: 'Cognition',
+                    applicableMeasures: 'SLUMS',
+                  ),
                   verticalSpace(100),
                 ],
               ),
