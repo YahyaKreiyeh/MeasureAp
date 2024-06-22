@@ -14,15 +14,19 @@ class AssessmentView4 extends StatefulWidget {
 }
 
 class AssessmentView4State extends State<AssessmentView4> {
-  final Map<String, String> answers = {};
+  final Map<String, bool> toggleStates = {
+    'question5': false,
+    'question6': false,
+    'question7': false,
+  };
   bool isDialogShown = false;
   int correctAnswersCount = 0;
 
   void _recordAnswer(String question, bool isCorrect) {
     setState(() {
-      answers[question] = isCorrect ? 'correct' : 'incorrect';
+      toggleStates[question] = isCorrect;
       correctAnswersCount =
-          answers.values.where((answer) => answer == 'correct').length;
+          toggleStates.values.where((answer) => answer).length;
     });
     context
         .read<AssessmentCubit>()
@@ -60,6 +64,7 @@ class AssessmentView4State extends State<AssessmentView4> {
             AnimalToggle(
               name: 'Chicken',
               emoji: '🐓',
+              isSelected: toggleStates['question5'] ?? false,
               onToggled: (isCorrect) {
                 _recordAnswer('question5', isCorrect);
               },
@@ -68,6 +73,7 @@ class AssessmentView4State extends State<AssessmentView4> {
             AnimalToggle(
               name: 'Horse',
               emoji: '🐎',
+              isSelected: toggleStates['question6'] ?? false,
               onToggled: (isCorrect) {
                 _recordAnswer('question6', isCorrect);
               },
@@ -76,6 +82,7 @@ class AssessmentView4State extends State<AssessmentView4> {
             AnimalToggle(
               name: 'Dog',
               emoji: '🐕',
+              isSelected: toggleStates['question7'] ?? false,
               onToggled: (isCorrect) {
                 _recordAnswer('question7', isCorrect);
               },
