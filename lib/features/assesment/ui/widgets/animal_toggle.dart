@@ -4,9 +4,10 @@ import 'package:measureapp/core/helpers/spacing.dart';
 import 'package:measureapp/core/utils/constants/colors.dart';
 import 'package:measureapp/core/utils/constants/styles.dart';
 
-class AnimalToggle extends StatefulWidget {
+class AnimalToggle extends StatelessWidget {
   final String name;
   final String emoji;
+  final bool isSelected;
   final Function(bool) onToggled;
   final VoidCallback onShowDialog;
 
@@ -14,26 +15,13 @@ class AnimalToggle extends StatefulWidget {
     super.key,
     required this.name,
     required this.emoji,
+    required this.isSelected,
     required this.onToggled,
     required this.onShowDialog,
   });
 
-  @override
-  AnimalToggleState createState() => AnimalToggleState();
-}
-
-class AnimalToggleState extends State<AnimalToggle> {
-  bool isSelected = false;
-
-  void _toggle(bool value) {
-    setState(() {
-      isSelected = value;
-    });
-    widget.onToggled(value);
-  }
-
-  void _showEmojiDialog(String emoji) {
-    widget.onShowDialog();
+  void _showEmojiDialog(BuildContext context, String emoji) {
+    onShowDialog();
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -64,7 +52,7 @@ class AnimalToggleState extends State<AnimalToggle> {
         );
       },
     ).then((_) {
-      widget.onShowDialog();
+      onShowDialog();
     });
   }
 
@@ -82,7 +70,7 @@ class AnimalToggleState extends State<AnimalToggle> {
             children: [
               GestureDetector(
                 onTap: () {
-                  _showEmojiDialog(widget.emoji);
+                  _showEmojiDialog(context, emoji);
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -97,7 +85,7 @@ class AnimalToggleState extends State<AnimalToggle> {
                     child: CircleAvatar(
                       backgroundColor: ColorsManager.scaffoldBackground,
                       child: Text(
-                        widget.emoji,
+                        emoji,
                         style: TextStyle(fontSize: 24.sp),
                       ),
                     ),
@@ -107,13 +95,13 @@ class AnimalToggleState extends State<AnimalToggle> {
               horizontalSpace(12),
               Expanded(
                 child: Text(
-                  widget.name,
+                  name,
                   style: TextStyles.primaryTextBold16,
                 ),
               ),
               Switch.adaptive(
                 value: isSelected,
-                onChanged: _toggle,
+                onChanged: onToggled,
                 activeColor: ColorsManager.checkMarkOrange,
                 inactiveTrackColor: ColorsManager.toggleGrey,
               ),
