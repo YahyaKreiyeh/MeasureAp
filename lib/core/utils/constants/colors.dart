@@ -12,12 +12,6 @@ class ColorsManager {
   static const Color blue = Color(0xFF2196F3);
   static const Color red = Color(0xFFF44336);
   static const Color orange = Color(0xFFFF9800);
-  static const Color appointmentBackgroundRed = Color(0xFFFFEEEF);
-  static const Color appointmentForegroundRed = Color(0xFFF97179);
-  static const Color appointmentBackgroundOrange = Color(0xFFFFFBF6);
-  static const Color appointmentForegroundOrange = Color(0xFFF2AA60);
-  static const Color appointmentBackgroundBlue = Color(0xFFF1F4FF);
-  static const Color appointmentForegroundBlue = Color(0xFF7698FE);
   static const Color historyCardBlue = Color(0x1E4D6FE7);
   static const Color assessmentCardOrange = Color(0x1EE7974D);
   static const Color successGreen = Color(0xFF0C9A55);

@@ -16,12 +16,4 @@ abstract class AssessmentApiService {
   Future<CreateAssessmentRequestResponse> create(
     @Body() CreateAssessmentRequestBody createAssessmentRequestBody,
   );
-
-  // @POST(AuthenticationApiConstants.signin)
-  // Future<SignInResponse> signin(
-  //   @Body() SigninRequestBody signinRequestBody,
-  // );
-
-  // @POST(AuthenticationApiConstants.accountStatus)
-  // Future<CheckAccountStatusResponse> checkAccountStatus();
 }

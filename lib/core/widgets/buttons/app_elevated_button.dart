@@ -3,11 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:measureapp/core/utils/constants/colors.dart';
 
 class AppElevatedButton extends StatelessWidget {
+  final double? width;
   final String text;
   const AppElevatedButton({
     super.key,
     required this.onPressed,
     required this.text,
+    this.width,
   });
 
   final void Function()? onPressed;
@@ -23,7 +25,7 @@ class AppElevatedButton extends StatelessWidget {
             child: CustomPaint(
               painter: GradientShadowPainter(),
               child: Container(
-                width: 0.85.sw,
+                width: width ?? 0.85.sw,
                 height: 56.h,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(70.r),

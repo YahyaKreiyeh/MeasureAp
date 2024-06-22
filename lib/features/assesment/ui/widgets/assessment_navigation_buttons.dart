@@ -34,6 +34,7 @@ class AssessmentNavigationButtons extends StatelessWidget {
         horizontalSpace(10),
         Expanded(
           child: AppElevatedButton(
+            width: currentStep > 0 ? 0.4.sw : null,
             onPressed: onContinuePressed,
             text: currentStep == 3
                 ? 'Finish'

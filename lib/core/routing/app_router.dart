@@ -29,7 +29,6 @@ class AppRouter {
         );
       case Routes.newAssessmentScreen:
         final arguments = settings.arguments;
-        // context.read<NewAssessmentCubit>().selectSecondDropdownItem(value!);
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => NewAssessmentCubit(),
